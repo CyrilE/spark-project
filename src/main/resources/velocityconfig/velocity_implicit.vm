@@ -1,5 +1,0 @@
-#* @implicitly included *#
-#* @vtlvariable name="WebPath" type="app.util.Path.Web" *#
-#* @vtlvariable name="msg" type="app.util.MessageBundle" *#
-#* @vtlvariable name="departments" type="java.lang.Iterable<app.department.Department>" *#
-#* @vtlvariable name="department" type="app.department.Department" *#

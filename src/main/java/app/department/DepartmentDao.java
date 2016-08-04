@@ -15,6 +15,6 @@ public class DepartmentDao {
     }
 
     public Department getDepartmentById(int id){
-        return departments.stream().filter(d -> d.equals(id)).findFirst().orElse(null);
+        return departments.get(new Random().nextInt(departments.size()));
     }
 }

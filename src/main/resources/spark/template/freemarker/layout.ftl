@@ -1,4 +1,4 @@
-#macro(mainLayout)
+<#macro mainLayout title="Рога и Копыта">
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -11,7 +11,7 @@
 	<div class="yui-row"></div>
 	<div class="yui-row">
 		<div class="yui-col yui-col--80 yui-col-offset--10">
-			$bodyContent
+			<#nested/>
 		</div>
 	</div>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -27,4 +27,4 @@
 </body>
 </html>
 
-#end
+</#macro>

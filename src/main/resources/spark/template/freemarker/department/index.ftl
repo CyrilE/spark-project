@@ -1,5 +1,5 @@
-#parse("/velocity/layout.vm")
-#@mainLayout()
+<#import "../layout.ftl" as layout>
+<@layout.mainLayout "Департаменты">
     <div class="yui-bc">
         <ul class="yui-bc_items">
             <li class="yui-bc_item">
@@ -16,12 +16,12 @@
         <div class="yui-block_body">
             <div style="padding-left: 20px;">
 
-                #foreach ($department in $departments)
-                    <p><a href="/departments/$department.getId()">$department.getName()</a></p>
-                #end
+                <#list departments as department>
+                    <p><a href="/departments/${department.getId()}/">${department.getName()}</a></p>
+                </#list>
 
-                <a href="/departments/create" class="yui-btn yui-btn--green">Добавить</a>
+                <a href="/departments/create/" class="yui-btn yui-btn--green">Добавить</a>
             </div>
         </div>
     </div>
-#end
+</@layout.mainLayout>
