@@ -4,8 +4,6 @@ import lombok.*;
 
 public class Path {
 
-    // The @Getter methods are needed in order to access
-    // the variables from Velocity Templates
     public static class Web {
         @Getter public static final String DEPARTMENTS = "/departments/";
         @Getter public static final String DEPARTMENT_SHOW = "/departments/:id/";

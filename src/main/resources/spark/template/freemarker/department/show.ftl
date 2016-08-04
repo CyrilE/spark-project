@@ -26,7 +26,7 @@
 					<h3>Сотрудники</h3>
 					<ul>
 						<#list employees as employee >
-							<li><a href="/employees/">test</a></li>
+							<li><a href="/employees/${employee.getId()}/">${employee.getFullname()}</a></li>
 						</#list>
 					</ul>
 				</#if>
