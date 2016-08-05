@@ -19,12 +19,12 @@
 		<div class="yui-block_header">Редактировать cотрудника - ${ employee.fullname }</div>
 		<div class="yui-block_body">
 			<div style="padding-left: 20px;">
-				<form method="POST" action="/employees/${ employee.id }/">
+				<form method="GET" action="/employees/${ employee.id }/update/">
 					<input name="fullname" type="text" class="yui-input-control" placeholder="ФИО" value="${ employee.fullname }" required="required" />
 					<input name="birthday" type="date" class="yui-input-control" placeholder="Дата рождения" value="${ employee.birthday }"required="required" />
 					<select name="department">
 					 	<#list departments as department >
-					 		<#if department.id == department.employee_department >
+					 		<#if department.id == employee.department_id >
 					 			<option value="${ department.id }" selected="selected">${ department.name }</option>
 					 		<#else>
 					 			<option value="${ department.id }">${ department.name }</option>
@@ -32,7 +32,6 @@
 					 	</#list>
 					</select><br>
 					<input type="hidden" name="id" value="${ employee.id }"/>
-					<input type="hidden" name="_METHOD" value="PUT"/>
 					<button class="yui-btn yui-btn--green" type="submit">Редактировать</button>
 				</form>
 			</div>

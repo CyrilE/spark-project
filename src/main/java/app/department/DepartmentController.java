@@ -35,6 +35,20 @@ public class DepartmentController {
         HashMap<String, Object> model = new HashMap<>();
         String name = request.queryParams("name");
         department.updateOneDepartment(Integer.parseInt(request.params(":id")), name);
-        return new FreeMarkerEngine().render(new ModelAndView(model, Path.Template.DEPARTMENT_EDIT)); // TODO
+        response.redirect("/departments/" + request.params(":id") + "/");
+        return new FreeMarkerEngine().render(new ModelAndView(model, Path.Template.DEPARTMENT_SHOW));
+    };
+
+    public static Route create = (Request request, Response response) -> {
+        HashMap<String, Object> model = new HashMap<>();
+        return new FreeMarkerEngine().render(new ModelAndView(model, Path.Template.DEPARTMENT_CREATE));
+    };
+
+    public static Route store = (Request request, Response response) -> {
+        HashMap<String, Object> model = new HashMap<>();
+        String name = request.queryParams("name");
+        department.storeOneDepartment(name);
+        response.redirect("/departments/");
+        return new FreeMarkerEngine().render(new ModelAndView(model, Path.Template.DEPARTMENT_SHOW));
     };
 }

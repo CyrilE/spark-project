@@ -20,7 +20,7 @@
 		<div class="yui-block_body">
 			<div style="padding: 20px;">
 				<form method="POST" action="/departments/">
-					<input name="name" id="input" type="text" class="yui-input-control" placeholder="Название" value="${ department.name }"/>
+					<input name="name" id="input" type="text" class="yui-input-control" placeholder="Название"/>
 					<button class="yui-btn yui-btn--green yui-btn--icon" type="submit"><span class="yui-icon-add"></span> Создать</button>
 				</form>
 			</div>

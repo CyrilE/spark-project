@@ -19,9 +19,8 @@
 		<div class="yui-block_header">Редактировать департамент - ${ department.name }</div>
 		<div class="yui-block_body">
 			<div style="padding: 20px;">
-				<form method="POST" action="/departments/${ department.id }/">
+				<form method="GET" action="/departments/${ department.id }/update/">
 					<input name="name" id="input" type="text" class="yui-input-control" placeholder="Название" value="${ department.name }"/>
-					<input type="hidden" name="_METHOD" value="PUT"/>
 					<button class="yui-btn yui-btn--green" type="submit">Редактировать</button>
 				</form>
 			</div>

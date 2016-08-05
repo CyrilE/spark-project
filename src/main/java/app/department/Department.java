@@ -55,4 +55,14 @@ public class Department {
                     .executeUpdate();
         }
     }
+
+    public void storeOneDepartment(String name){
+        String query = "INSERT INTO departments(name) VALUES (:name)";
+
+        try(Connection con = sql2o.open()){
+            con.createQuery(query)
+                    .addParameter("name", name)
+                    .executeUpdate();
+        }
+    }
 }
